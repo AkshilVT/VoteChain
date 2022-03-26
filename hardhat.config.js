@@ -12,7 +12,7 @@ const rpcProvider = process.env.RPC_PROVIDER_ENDPOINT;
 module.exports = {
   solidity: '0.7.3',
   paths: {
-    artifacts: './src/artifacts',
+    artifacts: './frontend/src/artifacts',
   },
   networks: {
     hardhat: {
