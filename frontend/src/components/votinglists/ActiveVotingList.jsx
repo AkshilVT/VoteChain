@@ -4,9 +4,9 @@ import VotingCard from './VotingCard';
 export default class ActiveVotingList extends Component {
   constructor(props){
     super(props);
-    this.state = [
-      votingList = []
-    ];
+    this.state = {
+      votingList : []
+    };
     this.setVotingList = this.setVotingList.bind(this);
   }
 
@@ -16,7 +16,7 @@ export default class ActiveVotingList extends Component {
     });
   }
   async componentDidMount(){
-    votingList = await fetch();
+    const votingList = await fetch();
     this.setVotingList(votingList);
   }
 
@@ -25,7 +25,7 @@ export default class ActiveVotingList extends Component {
       <div>
         
         {
-        this.votingList.map((element,i) => 
+        this.state.votingList.map((element,i) => 
           <VotingCard details={element.details} id={i}/>
         )}
       </div>
