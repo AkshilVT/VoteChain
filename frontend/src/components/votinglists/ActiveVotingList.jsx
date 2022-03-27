@@ -14,6 +14,7 @@ export default function ActiveVotingList() {
   const [TkAd, setTkAd] = useState("");
   useEffect(() => {
     displayActiveList()
+    displayCompletedList()
   }, [])
   async function requestAccount() {
     await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -44,8 +45,14 @@ export default function ActiveVotingList() {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const contract = new ethers.Contract(votingAddress, Voting.abi, provider);
       const list = await contract.displayCompletedList();
-      setList2(list)
-      console.log('List: ', list);
+      const nameList = []
+      for (const i in list) {
+        const Data = await contract.getOne(list[i]);
+        nameList.push(Data)
+        console.log(Data)
+      }
+      setList2(nameList)
+      console.log('List Completed: ', list);
     }
   }
   async function addProposal() {
@@ -87,18 +94,19 @@ export default function ActiveVotingList() {
   }
   return (
     <>
-      <div className='w-full overflow-x-hidden max-w-screen-2xl container mx-auto'>
-        <div className='w-full space-y-2 m-5 pr-6 flex flex-col justify-center'>
-          <div className='flex justify-between'>
+      <div className='w-full bg-black overflow-x-hidden mx-auto'>
+        <div className='w-full  text-white space-y-2 container mx-auto m-5 pr-6 flex flex-col justify-center'>
+          <h1 className='text-2xl text-center font-bold py-2'>Currently Active Voting Proposals</h1>
+          <div className='flex justify-between px-6 text-[#0088dd] font-semibold py-2'>
             <p>Name</p>
           </div>
           {list.map((el, i) => {
             console.log("Entered");
             // Return the element. Also pass key     
-            return (<div key={i} className='flex justify-between items-center'><p>{el.name}</p>
+            return (<div key={i} className='flex justify-between hover:shadow-md hover:shadow-white items-center border p-5 rounded-full'><p>{el.name}</p>
               <div className='space-x-5'>
                 {/* <button className='bg-zinc-50 border p-2 rounded-sm' onClick={()=>{beginProposal(el.tokenAd);}}>Begin</button> */}
-                <button className='bg-zinc-50 border p-2 rounded-sm' onClick={() => {console.log(el.tkA);
+                <button className='bg-[#0088dd] rounded-lg  p-2 px-4' onClick={() => {console.log(el.tkA);
 
                 endProposal(el.tkA)}}>End</button>
               </div>
@@ -131,12 +139,33 @@ export default function ActiveVotingList() {
             <label htmlFor="email" className="placeholder">Start and End Time
             <input id="firstname" className="input" type="text" placeholder=" " />
             </label>
-            </div> */}
+          </div> */}
           <button type="text" className="submit" name="submit" onClick={() => addProposal()}>Submit</button>
           {/* <button type="text" className="submit" name="begin">Begin</button>
           <button type="text" className="submit" name="end">End</button> */}
+          </div>
         </div>
-      </div>
+        
+      <div className='w-full bg-black overflow-x-hidden mx-auto'>
+        <div className='w-full bg-black text-white space-y-2 container mx-auto m-5 pr-6 flex flex-col justify-center'>
+          <h1 className='text-2xl text-center font-bold py-2'>Recently Completed Voting Proposals</h1>
+          <div className='flex justify-between px-6 text-[#0088dd] font-semibold py-2'>
+            <p>Name</p>
+          </div>
+          {list2.map((el, i) => {
+            console.log("Entered");
+            // Return the element. Also pass key     
+            return (<div key={i} className='flex justify-between hover:shadow-md hover:shadow-white items-center border p-5 rounded-full'><p>{el.name}</p>
+              <div className='space-x-5'>
+                {/* <button className='bg-zinc-50 border p-2 rounded-sm' onClick={()=>{beginProposal(el.tokenAd);}}>Begin</button> */}
+                {/* <button className='bg-[#0088dd] rounded-lg  p-2 px-4' onClick={() => {console.log(el.tkA);
+
+                endProposal(el.tkA)}}>End</button> */}
+              </div>
+            </div>)
+          })}
+        </div>
+        </div>
     </>
   );
 }
