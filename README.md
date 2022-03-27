@@ -25,4 +25,15 @@ Votechain is a decentralized Voting System implemented on Polygon Blockchain. We
 - Implementing other voting methods.
 - Cross Linking with other blockchains like Tezos, Mana etc.
 
+<br></br>
+### Gas Fee Reduction Protocol Ideas
+- Snapshots
+    - After certain time/count of votes, a snapshot of all total votes of the particular proposal will be updated on the main net.
+- Resource Pooling
+    - As stated in the conviction model, the more amount of tokens and the longer you stake, will determine the voting power you have. During these locking period, the user will not be able to access the locked tokens.
+- Use of Biconomy
+    - Any ERC20 token can be accepted as a stalking option and with the use of Biconomy the voter will pay free/minimum fees.
+- Minimum Organizer's Fee
+    - Certain amount of fee would be deduced from the organizer's stalking funds, to ensure maximum participants of the voters.
+
 **Happy _building_!**
