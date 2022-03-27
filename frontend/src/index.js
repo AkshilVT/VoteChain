@@ -15,6 +15,7 @@ import Header from './components/Header';
 import VotingCard from './components/votinglists/VotingCard';
 import Navbar from './components/Navbar';
 import NewVotingPage from './components/adminPanel/NewVotingPage';
+import PastVotingList from './components/votinglists/PastVotingList';
 
 // This is the entry point of your application, but it just renders the Dapp
 // react component. All of the logic is contained in it.
@@ -31,7 +32,10 @@ const navstyle = {
 }
 ReactDOM.render(
   <BrowserRouter>
-  <Header />
+
+  
+    <PastVotingList />
+  {/* <Header />
     <Routes>
       <Route path="/" element={<UserPanel />} />
       <Route path="/admin" element={<AdminPanel />} />
