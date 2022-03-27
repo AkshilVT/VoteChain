@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import VotingCard from './VotingCard';
-import '../css/VotingList.css';
+import React, { Component } from 'react';
+import '../../index.css'
+
 export default class PastVotingList extends Component {
   constructor(props){
     super(props);
@@ -33,27 +33,15 @@ export default class PastVotingList extends Component {
   render() {
     return (
       <div className='votingListBody'>
-        
-        <article className="leaderboard">
-          <header>
-            
-            <h1 className="leaderboard__title"><span className="leaderboard__title--top"> List of Past Voting Events</span></h1>
-          </header>
-          <main className="leaderboard__profiles">
-            
-            <article className="leaderboard__profile">
-              <span className="leaderboard__name">Mark Zuckerberg</span>
-              <span className="leaderboard__name">Date and Time</span>
-              <span className="leaderboard__value">35.7<span>B</span></span>
-              <button class="buttonDelete">
-                <span class="button__text" onClick={}>
-                  Delete
-                </span>
-              </button>
-            </article>
-            
-          </main>
-        </article>
+          <div className="flex justify-center">
+            <ul className="bg-white rounded-lg border border-gray-200 w-96 text-gray-900">
+              <li className="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg">An item</li>
+              <li className="px-6 py-2 border-b border-gray-200 w-full">A second item</li>
+              <li className="px-6 py-2 border-b border-gray-200 w-full">A third item</li>
+              <li className="px-6 py-2 border-b border-gray-200 w-full">A fourth item</li>
+              <li className="px-6 py-2 w-full rounded-b-lg">And a fifth one</li>
+            </ul>
+          </div>
 
       </div>
     )
