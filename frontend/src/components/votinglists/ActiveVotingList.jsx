@@ -56,7 +56,7 @@ const [list, setList] = useState([]);
 		  const contract = new ethers.Contract(votingAddress, Voting.abi, signer);
 		  const setInformation = await contract.setInfo(name,desc,TkAd);
 		  await setInformation.wait();
-		  console.log("Success 1")
+		  console.log("Success 1", TkAd)
 		  displayActiveList()
 		  displayCompletedList()
       beginProposal(TkAd)
@@ -85,18 +85,18 @@ async function endProposal(TkAd){
   }
   return(
   <>
-    <div className='w-full overflow-x-hidden max-w-screen-2xl container mx-auto'>
-      <div className='w-full space-y-2 m-5 pr-6 flex flex-col justify-center'>
-        <div className='flex justify-between'>
+    <div className='w-full overflow-x-hidden bg-[#000000]'>
+      <div className='w-full space-y-2 max-w-screen-2xl mx-auto text-white m-5 pr-6 flex flex-col justify-center rounded-md border-solid border-2 shadow-md p-3'>
+        <div className='flex justify-between text-xl font-bold'>
           <p>Name</p>
         </div>
         {list.map((el, i) => {     
            console.log("Entered");                 
            // Return the element. Also pass key     
-           return (<div key={i} className='flex justify-between items-center'><p>{el.name}</p>
+           return (<div key={i} className=' text-white text-xl font-semibold flex justify-between items-center x-6 py-2 border-b border-gray-200 w-full'><p>{el.name}</p>
            <div className='space-x-5'>
              {/* <button className='bg-zinc-50 border p-2 rounded-sm' onClick={()=>{beginProposal(el.tokenAd);}}>Begin</button> */}
-             <button className='bg-zinc-50 border p-2 rounded-sm'onClick={()=>endProposal(el.tokenAd)}>End</button>
+             <button className='bg-[#15172b] border p-2 rounded-sm'onClick={()=>endProposal(el.tokenAd)}>End</button>
              </div>
              </div>)  
         })}
@@ -129,6 +129,7 @@ async function endProposal(TkAd){
             </label>
             </div> */}
           <button type="text" className="submit" name="submit" onClick={()=>addProposal()}>Submit</button>
+          <p className='text-red-500 text-xs pt-2 text-center'>**Do not reload while tranraction is processing**</p>
           {/* <button type="text" className="submit" name="begin">Begin</button>
           <button type="text" className="submit" name="end">End</button> */}
         </div>
