@@ -18,6 +18,8 @@ contract Voting {
     // array of struct
     // array of each propasals
     Info[] Informations;
+    string[] private allName;
+    address[] private allAds;
 
     
     address[] private active;
@@ -42,12 +44,10 @@ contract Voting {
     }
 
     // fetch all the proposals for the dashboard
-    function getAll() public view returns (string[] memory names, address[] memory tkAds) {
-        string[] memory allName;
-        address[] memory allAds;
+    function getAll() public returns (string[] memory names, address[] memory tkAds) {
         for (uint i = 0; i<Informations.length; i++) {
-            allName[i] = (Informations[i].name);
-            allAds[i] = (Informations[i].tokenAd);
+            allName.push(Informations[i].name);
+            allAds.push(Informations[i].tokenAd);
         }
 
         return (allName, allAds);

@@ -19,18 +19,11 @@ async function main() {
 
   console.log('Account balance:', (await deployer.getBalance()).toString());
 
-<<<<<<< HEAD
-  // const Token = await ethers.getContractFactory("Token");
-  // const token = await Token.deploy();
-  // await token.deployed();
-  const Token = await ethers.getContractFactory("Voting");
-=======
-  const Token = await ethers.getContractFactory('Voting');
->>>>>>> test/integration
+  const Token = await ethers.getContractFactory('Token');
   const token = await Token.deploy();
   await token.deployed();
 
-  console.log('Token Voting address:', token.address);
+  console.log('Token address:', token.address);
 
   // We also save the contract's artifacts and address in the frontend directory
   saveFrontendFiles(token);
@@ -49,17 +42,10 @@ function saveFrontendFiles(token) {
     JSON.stringify({ Token: token.address }, undefined, 2)
   );
 
-<<<<<<< HEAD
-  const TokenArtifact = artifacts.readArtifactSync("Voting");
+  const TokenArtifact = artifacts.readArtifactSync('Token');
 
   fs.writeFileSync(
-    contractsDir + "/Voting.json",
-=======
-  const TokenArtifact = artifacts.readArtifactSync('Voting');
-
-  fs.writeFileSync(
-    contractsDir + '/Voting.json',
->>>>>>> test/integration
+    contractsDir + '/Token.json',
     JSON.stringify(TokenArtifact, null, 2)
   );
 }
