@@ -7,8 +7,8 @@ export default class AdminPanel extends Component {
     return (
       <div> 
           <ActiveVotingList />
-          <PastVotingList />
-          <NewVotingPage />
+          {/* <PastVotingList /> */}
+          {/* <NewVotingPage /> */}
       </div>
     )
   }

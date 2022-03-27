@@ -1,15 +1,15 @@
-import React from 'react';
-import { useState } from 'react';
-import { ethers } from 'ethers';
+  import React from 'react';
+  import { useState } from 'react';
+  import { ethers } from 'ethers';
 // import logo from './logo.svg';
 
 // import Greeter from './artifacts/contracts/Greeter.sol/Greeter.json';
 import Token from './artifacts/contracts/Token.sol/Token.json';
-import Voting from './artifacts/contracts/Voting.sol/Voting.json';
+import Voting from './artifacts/contracts/voting.sol/Voting.json';
 
 // const greeterAddress = '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9';
 const tokenAddress = '0x65Ca354e0F74BDAf568dB412f1Ad70627e7f77FE';
-const votingAddress = '0x5267aCcD0de89a5D5Cc5f8363e93E77636072bB7';
+const votingAddress = '0x567bc2915BEeafF36c8f960e73AB790785c395ef';
 function WalletCard() {
 //   const [greeting, setGreetingValue] = useState('');
 //   const [dataGreeting, setDataGreeting] = useState('');

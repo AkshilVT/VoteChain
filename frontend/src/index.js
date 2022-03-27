@@ -25,15 +25,14 @@ const navstyle = {
 };
 ReactDOM.render(
   <BrowserRouter>
-    <PastVotingList />
-    {/* <Header />
+    <Header />
     <Routes>
       <Route path='/' element={<UserPanel />} />
       <Route path='/admin' element={<AdminPanel />} />
       <Route path='/admin/addEvent' element={<NewVotingPage />} />
     </Routes>
-    {/* <Navbar style={navstyle}/> 
-    Navbar should be in the end only */}
+    {/* <Navbar style={navstyle} /> */}
+    {/* Navbar should be in the end only */}
   </BrowserRouter>,
   document.getElementById('root')
 );
