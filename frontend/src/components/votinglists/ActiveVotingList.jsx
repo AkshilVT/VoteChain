@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { ethers } from 'ethers';
 import Voting from '../../artifacts/contracts/voting.sol/Voting.json';
+import env from "react-dotenv";
 
-
-
-const votingAddress = '0x567bc2915BEeafF36c8f960e73AB790785c395ef';
+const votingAddress = "0x8C89350B159cbBa76f5Df1dC220B1e543740438F";
+// console.log(env.TOKEN_ADDRESS, votingAddress);
 export default function ActiveVotingList() {
   const [list, setList] = useState([]);
   const [list2, setList2] = useState([]);

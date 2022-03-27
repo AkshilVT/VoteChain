@@ -14,6 +14,7 @@ module.exports = {
   paths: {
     artifacts: './frontend/src/artifacts',
   },
+  defaultNetwork: "matic",
   networks: {
     hardhat: {
       chainId: 31337,
@@ -22,9 +23,9 @@ module.exports = {
       url: rpcProvider,
       accounts: [PRIVATE_KEY],
     },
-    // matic: {
-    //   url: 'https://rpc-mumbai.maticvigil.com',
-    //   accounts: [PRIVATE_KEY],
-    // },
+    matic: {
+      url: "https://rpc-mumbai.maticvigil.com",
+      accounts: [process.env.PRIVATE_KEY]
+    },
   },
 };

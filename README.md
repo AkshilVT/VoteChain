@@ -1,13 +1,12 @@
-# Hardhat Hackathon Boilerplate
+# VoteChain
 
-This repository contains a sample project that you can use as the starting point
-for your Ethereum project. It's also a great fit for learning the basics of
-smart contract development.
+Votechain is a decentralized Voting System implemented on Polygon Blockchain. We are providing solutions/services to the ones who want to organize elections. Currently we only have Ad-hoc system implemented and planning to implement all the existing Electorial System.
 
-This project is intended to be used with the
-[Hardhat Beginners Tutorial](https://hardhat.org/tutorial), but you should be
-able to follow it by yourself by reading the README and exploring its
-`contracts`, `tests`, `scripts` and `frontend` directories.
+## Tech Stack
+- Solidity
+- Hardhat
+- React
+- NodeJS
 
 ## Quick start
 

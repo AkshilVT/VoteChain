@@ -2,6 +2,7 @@
   import { useState } from 'react';
   import { ethers } from 'ethers';
 // import logo from './logo.svg';
+import env from "react-dotenv";
 
 // import Greeter from './artifacts/contracts/Greeter.sol/Greeter.json';
 import Token from './artifacts/contracts/Token.sol/Token.json';
@@ -9,7 +10,8 @@ import Voting from './artifacts/contracts/voting.sol/Voting.json';
 
 // const greeterAddress = '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9';
 const tokenAddress = '0x65Ca354e0F74BDAf568dB412f1Ad70627e7f77FE';
-const votingAddress = '0x567bc2915BEeafF36c8f960e73AB790785c395ef';
+const votingAddress = "0x8C89350B159cbBa76f5Df1dC220B1e543740438F";
+// console.log(env.TOKEN_ADDRESS, votingAddress);
 function WalletCard() {
 //   const [greeting, setGreetingValue] = useState('');
 //   const [dataGreeting, setDataGreeting] = useState('');
