@@ -19,7 +19,10 @@ async function main() {
 
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
-  const Token = await ethers.getContractFactory("Token");
+  // const Token = await ethers.getContractFactory("Token");
+  // const token = await Token.deploy();
+  // await token.deployed();
+  const Token = await ethers.getContractFactory("Voting");
   const token = await Token.deploy();
   await token.deployed();
 
@@ -42,10 +45,10 @@ function saveFrontendFiles(token) {
     JSON.stringify({ Token: token.address }, undefined, 2)
   );
 
-  const TokenArtifact = artifacts.readArtifactSync("Token");
+  const TokenArtifact = artifacts.readArtifactSync("Voting");
 
   fs.writeFileSync(
-    contractsDir + "/Token.json",
+    contractsDir + "/Voting.json",
     JSON.stringify(TokenArtifact, null, 2)
   );
 }
