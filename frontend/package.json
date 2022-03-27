@@ -16,7 +16,7 @@
     "tw-elements": "^1.0.0-alpha12"
   },
   "scripts": {
-    "start": "set PORT=3006 && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
