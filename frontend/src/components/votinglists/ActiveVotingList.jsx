@@ -16,18 +16,14 @@ export default class ActiveVotingList extends Component {
     });
   }
   async componentDidMount(){
-    const votingList = await fetch();
-    this.setVotingList(votingList);
+    //const votingList = await fetch();
+    //this.setVotingList(votingList);
+    console.log("hi");
   }
 
   render() {
     return (
       <div>
-        
-        {
-        this.state.votingList.map((element,i) => 
-          <VotingCard details={element.details} id={i}/>
-        )}
       </div>
     )
   }

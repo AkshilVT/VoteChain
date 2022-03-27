@@ -5,10 +5,10 @@ import NewVotingPage from './NewVotingPage';
 export default class AdminPanel extends Component {
   render() {
     return (
-      <div>
-        <Route to="/newvoting" element={<NewVotingPage />} />
+      <div> 
           <ActiveVotingList />
           <PastVotingList />
+          <NewVotingPage />
       </div>
     )
   }

@@ -5,8 +5,7 @@ export default class UserPanel extends Component {
   render() {
     return (
       <div>
-        <ActiveVotingList />
-        <PastVotingList />
+        
       </div>
     )
   }
